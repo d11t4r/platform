@@ -1,0 +1,111 @@
+/* платформа огэ · зефирный стиль: тёплый розовый, мягкие объёмные плашки, стекло */
+:root{
+  --bg1:#fff6ef; --bg2:#fff1ec;
+  --ink:#4a2a31; --ink2:#6b3f48; --muted:#8a5560;
+  --rose:#b54a5f; --rose2:#d9707f; --rose3:#8f3549; --pink:#ea8684;
+  --blush:#fde4df; --line:#f0cfcf; --card:rgba(255,255,255,.72);
+  --peach:#f5a77e; --gold:#f2aa3c;
+  --r-lg:28px; --r-md:20px; --r-sm:14px;
+  --shadow:0 10px 28px rgba(201,94,114,.10);
+  --f-head:'Comfortaa',system-ui,sans-serif; --f-body:'Manrope',system-ui,sans-serif; --f-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:var(--f-body);color:var(--ink);background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;font-size:15px;line-height:1.5}
+a{color:var(--rose)} a:hover{color:var(--rose3)}
+h1,h2,h3{font-family:var(--f-head);font-weight:700;margin:0;color:var(--ink)}
+h1{font-size:28px} h2{font-size:18px} h3{font-size:15px}
+.mark{text-align:center;font-family:var(--f-head);font-size:12px;letter-spacing:.08em;color:var(--muted);padding:14px 0 4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 120px}
+.muted{color:var(--muted)} .small{font-size:12px} .mono{font-family:var(--f-mono)}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.col{display:flex;flex-direction:column;gap:12px}
+.grow{flex:1;min-width:0}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid #fff;border-radius:var(--r-lg);box-shadow:var(--shadow);padding:20px;backdrop-filter:blur(14px)}
+.card.flat{box-shadow:none;background:rgba(255,255,255,.55)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:var(--blush);color:var(--rose3);font-size:12px;font-weight:600}
+.chip.ghost{background:rgba(255,255,255,.7);border:1px solid var(--line);color:var(--ink2);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:none;border-radius:var(--r-md);font-family:var(--f-head);font-weight:700;font-size:14px;cursor:pointer;color:#fff;text-decoration:none;
+  background:linear-gradient(170deg,var(--rose2),var(--rose));box-shadow:inset 0 2px 4px rgba(255,255,255,.4),inset 0 -4px 8px rgba(110,25,45,.25),0 8px 18px rgba(181,74,95,.25)}
+.btn:hover{color:#fff;filter:brightness(1.04)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.soft{color:var(--ink);background:radial-gradient(circle at 30% 20%,#fff6f0,#fbd3cf 60%,#f3b4b6);box-shadow:inset 0 3px 5px rgba(255,255,255,.8),inset 0 -5px 9px rgba(200,100,115,.2),0 8px 18px rgba(234,134,132,.22)}
+.btn.ghost{color:var(--rose3);background:rgba(255,255,255,.75);border:1.5px solid var(--line);box-shadow:none;font-weight:600}
+.btn.sm{min-height:36px;padding:0 14px;font-size:13px;border-radius:14px}
+input,textarea,select{font:inherit;color:var(--ink);background:rgba(255,255,255,.9);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:11px 14px;min-height:44px;width:100%}
+textarea{min-height:120px;resize:vertical}
+textarea.code{font-family:var(--f-mono);font-size:13px;line-height:1.55;min-height:220px;background:#fffdfb}
+input:focus,textarea:focus,select:focus{outline:2px solid #f3b4b6;border-color:#f3b4b6}
+label{font-family:var(--f-head);font-weight:600;font-size:13px;color:var(--ink2)}
+.field{display:flex;flex-direction:column;gap:6px}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:16px;font-size:14px;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.bar{height:10px;border-radius:999px;background:#fdeceb;overflow:hidden;box-shadow:inset 0 1px 3px rgba(150,60,80,.12)}
+.bar>i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#eea0a5,#c25a6e)}
+
+/* шапка и меню */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0 18px}
+.nav{display:flex;gap:6px;padding:5px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid #fff;box-shadow:var(--shadow);flex-wrap:wrap}
+.nav a{padding:10px 16px;border-radius:999px;text-decoration:none;color:var(--ink2);font-size:14px;white-space:nowrap}
+.nav a.on{color:#fff;font-weight:600;background:linear-gradient(170deg,var(--rose2),var(--rose));box-shadow:inset 0 2px 4px rgba(255,255,255,.4),inset 0 -4px 8px rgba(110,25,45,.25)}
+.tabbar{position:fixed;left:12px;right:12px;bottom:14px;display:none;justify-content:space-around;height:64px;border-radius:26px;background:rgba(255,255,255,.8);border:1px solid #fff;box-shadow:0 10px 28px rgba(181,74,95,.16);backdrop-filter:blur(18px);z-index:40}
+.tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:60px;text-decoration:none;color:var(--muted);font-size:11px}
+.tabbar a.on{color:var(--rose);font-weight:600}
+.tabbar svg{width:22px;height:22px}
+@media (max-width:760px){.nav.main{display:none}.tabbar{display:flex}h1{font-size:24px}.wrap{padding:0 14px 110px}}
+
+/* плитки заданий */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:9px}
+.tile{height:54px;border-radius:18px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-family:var(--f-head);font-weight:700;font-size:17px;border:none;cursor:pointer}
+.st-done{color:#fff;background:radial-gradient(circle at 35% 25%,#d97585,#b54a5f 55%,#973a50);box-shadow:inset 0 3px 4px rgba(255,255,255,.35),inset 0 -4px 8px rgba(90,20,40,.3),0 6px 12px rgba(181,74,95,.28)}
+.st-errors{color:var(--ink);background:radial-gradient(circle at 35% 25%,#ffe8d8,#ffbf9b 55%,#f29b76);box-shadow:inset 0 3px 4px rgba(255,255,255,.6),inset 0 -4px 8px rgba(190,90,50,.22),0 6px 12px rgba(242,155,118,.26)}
+.st-learning{color:var(--ink);background:radial-gradient(circle at 35% 25%,#fff4f2,#fbd9d8 55%,#f2bcbf);box-shadow:inset 0 3px 4px rgba(255,255,255,.8),inset 0 -4px 8px rgba(200,110,120,.18),0 6px 12px rgba(234,134,132,.18)}
+.st-new{color:var(--muted);background:rgba(255,255,255,.8);box-shadow:inset 0 0 0 1px var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:11px;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:10px;height:10px;border-radius:4px;display:inline-block}
+
+/* матрица учителя */
+.matrix{overflow-x:auto}
+.matrix table{border-collapse:separate;border-spacing:5px;min-width:820px;width:100%}
+.matrix th{font-size:12px;color:var(--muted);font-weight:500}
+.matrix td.c{height:34px;border-radius:11px;text-align:center;font-size:11px;font-weight:600;min-width:34px}
+.matrix td.name{white-space:nowrap;font-weight:600;padding-right:8px}
+
+/* задание */
+.task-img{max-width:100%;border-radius:16px;background:#fff;border:1px solid #f6e3e0;display:block}
+.task-body{white-space:pre-line;line-height:1.6}
+.result{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:var(--r-md);background:linear-gradient(150deg,rgba(255,255,255,.8),rgba(253,221,218,.8));border:1px solid #fff}
+.result.ok{box-shadow:0 0 0 5px rgba(249,195,200,.25),0 12px 26px rgba(234,134,132,.25)}
+.result.bad{background:linear-gradient(150deg,#fff,#ffe4d6)}
+.att{display:inline-block;padding:5px 10px;border-radius:10px;font-family:var(--f-mono);font-size:12px;margin:0 6px 6px 0}
+.att.ok{background:var(--rose);color:#fff} .att.bad{background:#ffcbc0;color:#8a4a2c} .att.wait{background:#fff;border:1px solid var(--line);color:var(--muted)}
+
+/* пробник */
+.timer{font-family:var(--f-mono);font-weight:600;font-size:30px}
+.orb{width:170px;height:170px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;
+  background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.95),rgba(255,232,228,.7) 45%,rgba(240,160,172,.55));box-shadow:inset 0 6px 14px rgba(255,255,255,.9),inset 0 -14px 26px rgba(181,74,95,.22),0 18px 40px rgba(201,94,114,.3),0 0 60px rgba(247,183,191,.7)}
+.cells{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:7px}
+.cell{height:36px;border-radius:12px;border:none;font-family:var(--f-head);font-weight:700;font-size:13px;cursor:pointer}
+.cell.on{color:#fff;background:linear-gradient(170deg,var(--rose2),var(--rose));box-shadow:0 0 0 3px #fff,0 0 14px rgba(201,94,114,.55)}
+.cell.saved{background:radial-gradient(circle at 35% 28%,#fff4f2,#f8cdcd 60%,#efb0b5)}
+.cell.empty{background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+.sheet{position:fixed;inset:0;background:rgba(74,42,49,.28);display:flex;align-items:flex-end;justify-content:center;z-index:60}
+.sheet>div{width:100%;max-width:520px;background:rgba(255,248,244,.96);border-radius:32px 32px 0 0;padding:24px 22px 30px;display:flex;flex-direction:column;gap:14px;box-shadow:0 -16px 40px rgba(120,40,60,.18)}
+@media (min-width:760px){.sheet{align-items:center}.sheet>div{border-radius:32px}}
+
+/* звёздочка */
+.star-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+table.simple{border-collapse:collapse;width:100%;font-size:14px}
+table.simple td,table.simple th{padding:8px 10px;border-bottom:1px solid #f6e3e0;text-align:left;vertical-align:top}
+.check-list label{display:flex;gap:8px;align-items:flex-start;font-family:var(--f-body);font-weight:400;font-size:14px;color:var(--ink)}
+.check-list input{width:auto;min-height:auto;margin-top:4px}
+.pts{display:flex;gap:8px;flex-wrap:wrap}
+.pts .btn{min-width:52px}
+pre.out{background:#fffdfb;border:1px solid var(--line);border-radius:12px;padding:10px;font-family:var(--f-mono);font-size:12px;white-space:pre-wrap;margin:0}
+.empty-state{padding:28px;text-align:center;color:var(--muted)}
+.spin{width:28px;height:28px;border-radius:50%;border:3px solid #f6d3d3;border-top-color:var(--rose);animation:sp 0.9s linear infinite;margin:30px auto}
+@keyframes sp{to{transform:rotate(360deg)}}
+.timer.low{color:#c0392b;animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.55}}
+.task-body{white-space:pre-wrap}
+.matrix td.name{position:sticky;left:0;background:#fffaf7;z-index:1}
